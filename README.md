@@ -1,1 +1,1 @@
-# Calculator
+Odin project assignment: easy calculator implementation
