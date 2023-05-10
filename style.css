@@ -11,16 +11,12 @@ p{
 
 }
 .AC{
-    background-color: green;
-    width: 100px;
-    height: 100px;
-    grid-area: AC;
-}
-.Backspace{
     background-color: red;
-    width: 100px;
-    height: 100px;
-    grid-area: Backspace;
+    grid-area: AC;
+
+}
+.mult{
+    background-color: green;
 }
 .main{
     width: 70vh;
@@ -33,16 +29,19 @@ p{
     align-items: center;
 }
 .line{
-    border: solid black;
     height: 20%;
     width: 60vh;
     flex: 1;
 }
 .board{
     width: 100%;
+
     flex: 10;
     border: solid black;
     display: grid;
-    grid-template-columns: 50px 50px 50px 50px;
-    grid-template-rows: 100px;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    "AC AC mult mult"
+    ;
 }
