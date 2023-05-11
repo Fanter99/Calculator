@@ -5,4 +5,6 @@ for (let i of elements){
     i.style.gridArea = i.classList[0]
 }
 
-console.log(document.querySelector('.AC'));
+const button = document.querySelector('button');
+button.addEventListener("focus", i => console.log("hover"))
+button.addEventListener("click", i => console.log("piska"))

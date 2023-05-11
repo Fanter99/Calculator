@@ -1,3 +1,14 @@
+button{
+    height: 9.5vh;
+    width: 17.5vh;
+    position: absolute;
+    z-index: 6;
+    opacity: 0  ;
+}
+.AC p{
+    position: relative;
+    z-index: 5;
+}
 body{
     margin: 0;
     height: 100vh;
@@ -10,19 +21,14 @@ p{
     font-size: 5vh;
 
 }
-.AC{
-    background-color: red;
-    grid-area: AC;
-
-}
-.mult{
-    background-color: green;
+img{
+    width: 60%;
 }
 .main{
     width: 70vh;
     height: 60vh;
     border-radius: 3vh;
-    background-color: rgb(204, 155, 19);
+    background-color: #ffef96;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -35,13 +41,59 @@ p{
 }
 .board{
     width: 100%;
+    border-bottom-left-radius: 3vh;
+    border-bottom-right-radius: 3vh;
 
     flex: 10;
     border: solid black;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 100%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
     grid-template-areas: 
-    "AC AC mult mult"
+    "AC Backspace empty1 divide"
+    "seven eight nine mult"
+    "four five six sub"
+    "one two three add"
+    "empty2 zero comma gleich"
     ;
+
+}
+.board div{
+    border: solid black 1px;
+    font-size: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.color{
+    color: orange;
+}
+.board .AC{
+    border-top: none;
+    border-left: none;
+}
+.board .divide{
+    border-right: none;
+    border-top:none;
+}
+.board .empty2{
+    border-bottom: none;
+    border-left:none;
+}
+.board .gleich{
+    border-right: none;
+    border-bottom: none;
+}
+.board .Backspace{
+    border-top: none;
+}
+.board .empty1{
+    border-top: none;
+}
+.board .zero{
+    border-bottom: none;
+}
+.board .comma{
+    border-bottom: none;
 }
