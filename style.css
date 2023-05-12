@@ -3,11 +3,17 @@ button{
     width: 17.5vh;
     position: absolute;
     z-index: 6;
-    opacity: 0  ;
+    opacity: 0;
 }
-.AC p{
-    position: relative;
-    z-index: 5;
+.zero button{
+    height: 9.5vh;
+    width: 35vh;
+    position: absolute;
+    z-index: 6;
+    opacity: 0;
+
+    border-bottom-left-radius: 3vh;
+
 }
 body{
     margin: 0;
@@ -15,6 +21,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: default;
 }
 p{
     text-align: right;
@@ -33,66 +40,81 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    border: solid black 2vh;
+
+
 }
 .line{
-    height: 20%;
+    border-radius: 2vh;
+
+    min-height: 13vh;
     width: 60vh;
+    margin: 3vh;
     flex: 1;
+    padding-right: 3vh;
+    background-color: white;
+
 }
 .board{
     width: 100%;
-    border-bottom-left-radius: 3vh;
-    border-bottom-right-radius: 3vh;
+
+    
+    border-top: solid black;
 
     flex: 10;
-    border: solid black;
+
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 20% 20% 20% 20% 20%;
     grid-template-areas: 
-    "AC Backspace empty1 divide"
-    "seven eight nine mult"
-    "four five six sub"
-    "one two three add"
-    "empty2 zero comma gleich"
+    "AC Backspace divide mult"
+    "seven eight nine sub"
+    "four five six add"
+    "one two three gleich"
+    "zero zero comma empty2"
     ;
 
 }
 .board div{
     border: solid black 1px;
-    font-size: 50px;
+    font-size: 5vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.board .no_color:hover{
+    color: white;
+}
+.board .color:hover{
+    border: solid red;
+    
 }
 .color{
     color: orange;
 }
 .board .AC{
     border-top: none;
-    border-left: none;
+
 }
-.board .divide{
-    border-right: none;
+.board .mult{
+
     border-top:none;
 }
-.board .empty2{
+.board .zero{
     border-bottom: none;
     border-left:none;
 }
-.board .gleich{
+.board .empty2{
     border-right: none;
     border-bottom: none;
 }
 .board .Backspace{
     border-top: none;
 }
-.board .empty1{
+.board .divide{
     border-top: none;
-}
-.board .zero{
-    border-bottom: none;
 }
 .board .comma{
     border-bottom: none;
