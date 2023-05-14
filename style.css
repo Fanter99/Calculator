@@ -96,7 +96,8 @@ img{
 }
 .board .AC{
     border-top: none;
-
+    color: red;
+    /* color: rgb(201, 34, 5); */
 }
 .board .mult{
 
