@@ -1,4 +1,3 @@
-//alert("test")
 const elements = document.querySelectorAll('.board div');
 const output = document.querySelector('p');
 
@@ -27,9 +26,7 @@ function operate(a,b, operation){
             return a - b;
             break;
         case 'divide':
-            // TODO:
-            // restricted display, limit the number of digits after a comma
-            return a / b;
+            return a/b;
             break;
         case 'mult':
             return a * b;
@@ -38,6 +35,12 @@ function operate(a,b, operation){
 }
 let point_flag = false;
 let empty_flag = true;
+let num_flag = false;
+
+let number1 = NaN;
+let number2 = NaN;
+console.log(number1, number2);
+let func = NaN;
 
 function button_press(i){
     if (i.target.parentElement.classList.contains('color')){
@@ -67,9 +70,45 @@ function button_press(i){
         case 'add':
         case 'sub':
         case 'mult':
-        case 'divide':            
+        case 'divide':  
+            if (empty_flag !== true){
+                if (isNaN(number1)){
+                    console.log(number1);
+                    number1 = Number(output.textContent);
+
+                }
+                else{
+                    number2 = Number(output.textContent);
+                    let res = operate(number1, number2, func);
+                    output.textContent = res;
+                    number1 = res;
+                    number2 = NaN;
+                }
+                func = element;
+                num_flag = true;
+            }     
+            break;
+        case 'gleich':
+            console.log(num_flag, number1);
+            if (num_flag == false && !isNaN(number1)){
+                console.log(output.textContent);
+                console.log(number2);
+                number2 = Number(output.textContent);
+
+                console.log(number2);
+                output.textContent = operate(number1, number2, func);
+                number1 = NaN;
+                number2 = NaN;
+                func = NaN;
+                num_flag = true;
+            }
+            break;         
         default:
-            if (output.textContent.length <= 16){
+            if (num_flag == true){
+                output.textContent = '';
+                num_flag = false;
+            }
+            if (output.textContent.length <= 14){
             switch (element) {   
                 case 'seven':
                     if (empty_flag == true){
